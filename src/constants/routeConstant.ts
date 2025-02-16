@@ -202,6 +202,8 @@ export type RootStackParamList = {
     setContactSave?: (value: boolean) => void;
     setContactData?: React.Dispatch<React.SetStateAction<CustomerContact[]>>;
   };
+  sametiList: undefined;
+  userSametiData: undefined;
 };
 
 type PickRootStackParamList<K extends keyof RootStackParamList> = {

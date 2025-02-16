@@ -31,7 +31,7 @@ export const useAppButtonStyle = ({ backgroundColor, borderRadius }: props) => {
         width: '100%',
         fontSize: 16,
         fontFamily: FONTS.medium,
-        backgroundColor: colors.green,
+        backgroundColor: colors.darkGray,
         borderRadius: borderRadius || 6,
       },
       buttonContainer: {

@@ -4,7 +4,8 @@ import React, { useCallback } from 'react';
 import { Pressable, View } from 'react-native';
 import SvgButton from '../svgButton/SvgButton';
 import { useListItemStyle } from './ListItemStyle';
-import { ListViewProps } from '../../interfaces/listTypes/listType';
+import { ListViewProps } from '../../interfaces/listInterface';
+
 
 const ListView = React.memo(
   ({

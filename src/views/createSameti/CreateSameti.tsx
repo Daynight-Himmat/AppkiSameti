@@ -38,9 +38,9 @@ const CreateSameti = () => {
             label={label}
             valueField={'id'}
             control={control}
-            labelField={'title'} 
+            labelField={'title'}
             placeholder={placeholder}
-            controllerName={controllerName} 
+            controllerName={controllerName}
           />
         );
       },
@@ -56,7 +56,7 @@ const CreateSameti = () => {
       [control],
     );
 
-    
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -82,8 +82,8 @@ const CreateSameti = () => {
           {watch?.('isLoanPenalty') && renderInput('loanPenalty',label('loanPenaltyType', 'loan' ), label('loanPenaltyType', 'loan' ))}
           {renderCheckBox('isOnlinePayment', CREATE_SAMETI.onlinePayment )}
           {renderCheckBox('isCaseStructure', CREATE_SAMETI.caseStructure )}
-          <RenderAppButton 
-            title='Create Sameti'
+          <RenderAppButton
+            title="Create Sameti"
             onPress={handleSubmit(()=> {
               console.log('check data', JSON.stringify(getValues(), null, 4));
             })}

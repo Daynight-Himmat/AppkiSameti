@@ -15,7 +15,7 @@ export const useAppTextStyle = ({ style, size }: props) => {
     return StyleSheet.create({
       container: {
         fontSize: size || 14,
-        color: colors.primary,
+        color: colors.darkGray,
         ...style,
       },
       require: {

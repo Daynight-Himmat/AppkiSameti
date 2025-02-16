@@ -24,6 +24,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Profile from '../views/profile/Profile';
 import SvgButton from '../components/svgButton/SvgButton';
+import SametiList from '../views/sametiList/SametiList';
+import UserSametiData from '../views/userSametiData/UserSameti';
 
 const Auth = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<RootStackParamList>();
@@ -70,6 +72,16 @@ const AuthStack = () => {
         component={CreateSameti}
         options={{headerShown: true, headerTitle: 'Create Sameti'}}
       />
+      <Auth.Screen
+        name={'sametiList'}
+        component={SametiList}
+        options={{headerShown: true, headerTitle: 'Create Sameti'}}
+      />
+      <Auth.Screen
+        name={'userSametiData'}
+        component={UserSametiData}
+        options={{headerShown: true, headerTitle: 'User Sameti Data'}}
+      />
     </Auth.Navigator>
   );
 };
@@ -85,7 +97,7 @@ const getIcon = (routeName: keyof RootStackParamList) => {
     case 'cart':
       return Svg.cartIcon;
     case 'profile':
-      return Svg.personIcon;
+      return Svg.groupIcon;
   }
 };
 
@@ -104,7 +116,7 @@ const BottomTab = () => {
 
   const fabButton = useCallback(() => (
     <SvgButton isFab onPress={()=> navigation.navigate('createSameti')} iconColor={'white'} icon={'plusIcon'} style={styles.fabButton} />
-  ), [])
+  ), [navigation]);
 
   return (
     <Tab.Navigator
@@ -191,5 +203,5 @@ const styles = StyleSheet.create({
       bottom: 25,
       zIndex: 999,
       left: 0,
-    }
+    },
 });
