@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
 import { useResponsiveScreen, useTheme } from '../../hooks';
 import { StyleSheet } from 'react-native';
-import { SPACING } from '../../styles';
-import CheckBox from '../../components/checkBox/CheckBox';
+import { FONTS, SPACING } from '../../styles';
 
 export const useUserSametiDataStyle = () => {
   const { colors } = useTheme();
@@ -19,7 +18,7 @@ export const useUserSametiDataStyle = () => {
         },
         dataContainer: {
           borderRadius: 6,
-          marginTop: hp(SPACING.s6),
+          marginVertical: hp(SPACING.s6),
           backgroundColor: colors.veryLightGray,
         },
         amountContainer: {
@@ -31,8 +30,10 @@ export const useUserSametiDataStyle = () => {
         amountType: {
           flexDirection: 'row',
           justifyContent: 'space-between',
+          paddingTop: hp(SPACING.s16),
         },
         caseButton:{
+          width: '45%',
           borderWidth: 2,
           borderRadius: 50,
           alignItems: 'center',
@@ -46,31 +47,63 @@ export const useUserSametiDataStyle = () => {
           color: colors.white,
         },
         buttonView: {
+          width: '50%',
           flexDirection: 'row',
+          justifyContent: 'space-between',
         },
         caseStructureContainer : {
           padding: 4,
           borderWidth: 2,
           borderRadius: 6,
           marginTop: hp(SPACING.s16),
+          paddingBottom: hp(SPACING.s16),
         },
         caseStructureTitle: {
           textAlign: 'center',
-          marginVertical: hp(SPACING.s16),
+          fontSize: 18,
+          marginTop: hp(SPACING.s16),
+          marginBottom: hp(SPACING.s6),
 
         },
         checkContainer:{
+          width: '50%',
           flexDirection: 'row',
-          marginVertical: wp(SPACING.s6),
+          justifyContent: 'space-between',
+          marginVertical: wp(SPACING.s1),
+          paddingVertical: hp(SPACING.s1),
         },
         checkBox: {
-          width: 'auto',
+          width: '25%',
+          textAlign: 'center',
           marginLeft: wp(SPACING.s16),
         },
         checkBoxText: {
-          width: '50%',
-          marginLeft: wp(SPACING.s16),
+          width: '70%',
           borderRadius: 6,
+          alignSelf: 'center',
+        },
+        checkTextStyle:{
+          textAlign: 'center',
+          alignSelf: 'center',
+          fontFamily: FONTS.semiBold,
+        },
+        labelInputContainer: {
+          width: '100%',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginVertical: hp(SPACING.s3),
+        },
+        lableInput: {
+          width: '100%',
+        },
+        inputContainer: {
+          width: '70%',
+          borderRadius: 6,
+          alignSelf: 'flex-end',
+        },
+        totalAmountContainer: {
+          marginTop: wp(SPACING.s16),
         },
     });
   }, [colors, wp, hp]);

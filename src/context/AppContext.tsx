@@ -1,11 +1,11 @@
-import React, {createContext, createRef, useState, useEffect} from 'react';
+import ModalStack from '../routes/ModalStack';
 import {ModalProvider} from 'react-native-modalfy';
 import Toaster from '../components/toaster/Toaster';
-import ModalStack from '../routes/ModalStack';
-import {storeData, getData} from '../helpers/localstorage';
 import {ASYNC_STORE_VAR} from '../constants/constants';
+import {storeData, getData} from '../helpers/localstorage';
 import {useNetInfo} from '@react-native-community/netinfo';
 import {closeNetworkWarning, openNetworkWarning} from '../helpers/utils';
+import React, {createContext, createRef, useState, useEffect} from 'react';
 
 export const AppContext = createContext({} as any);
 

@@ -1,17 +1,18 @@
 import { useMemo } from 'react';
 import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
+import { ColorValue, StyleSheet } from 'react-native';
 import { useResponsiveScreen, useTheme } from '../../hooks';
 import { CheckBoxSide } from '../../interfaces/commonInterface';
 
 interface props {
   size?: number;
   isSelect?: boolean;
+  checkColor?: ColorValue;
   checkBoxSide: CheckBoxSide;
   type?: 'check' | 'radio' | 'address' | 'none' | undefined;
 }
 
-export const useCheckBoxStyle = ({ size, isSelect, checkBoxSide }: props) => {
+export const useCheckBoxStyle = ({ size, isSelect, checkBoxSide, checkColor }: props) => {
   const { colors } = useTheme();
   const { hp } = useResponsiveScreen();
   const styles = useMemo(() => {
@@ -45,11 +46,11 @@ export const useCheckBoxStyle = ({ size, isSelect, checkBoxSide }: props) => {
         height: size || 16,
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: colors.green,
-        backgroundColor: isSelect ? colors.green : colors.white,
+        borderColor: checkColor ?  checkColor : colors.green,
+        backgroundColor: isSelect ? checkColor ?  checkColor : colors.green : colors.white,
       },
     });
-  }, [checkBoxSide, colors, hp, isSelect, size]);
+  }, [checkBoxSide, checkColor, colors, hp, isSelect, size]);
 
   return { styles, colors };
 };

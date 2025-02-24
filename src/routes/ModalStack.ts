@@ -1,14 +1,9 @@
-import {createModalStack, ModalStackConfig} from 'react-native-modalfy';
-import LoadingIndicator from '../components/loader/LoadingIndicator';
-import NetworkWarningModal from '../components/modals/networkWarning/NetworkWarning';
 import {MODALS} from '../constants/routeConstant';
+import {createModalStack, ModalStackConfig} from 'react-native-modalfy';
 import ConfirmationModal from '../components/modals/confirmation/Confirmation';
+import NetworkWarningModal from '../components/modals/networkWarning/NetworkWarning';
 
 const modalConfig: ModalStackConfig = {
-  [MODALS.loader]: {
-    modal: LoadingIndicator,
-    backBehavior: 'none',
-  },
   [MODALS.network]: {
     modal: NetworkWarningModal,
     backBehavior: 'none',

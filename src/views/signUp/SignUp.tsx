@@ -54,8 +54,6 @@ const SignUp = () => {
           {renderInput('personIcon', 'name', PLACEHOLDER.name, 'Name')}
           {renderInput('phoneIcon', 'mobile', PLACEHOLDER.phone, 'Mobile No.')}
           {renderInput('lockIcon', 'password', PLACEHOLDER.password, 'Password')}
-
-         
         </KeyboardScrollView>
         <View style={styles.buttonContainer}>
            <AppButton

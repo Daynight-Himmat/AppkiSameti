@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
 import {Dimensions} from 'react-native';
+import {useEffect, useState} from 'react';
 import {
   heightPercentageToDP,
   widthPercentageToDP,

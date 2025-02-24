@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleProp, TextStyle, ViewStyle } from 'react-native';
-import { useTextInputControllerStyle } from './TextInputControllerStyle';
 import { Controller, Control, FieldValues } from 'react-hook-form';
+import { useTextInputControllerStyle } from './TextInputControllerStyle';
 import AppTextInput, { AppTextProps } from '../../components/textInput/AppTextInput';
 
 interface Props extends AppTextProps {

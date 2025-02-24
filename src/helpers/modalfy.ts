@@ -1,6 +1,6 @@
 import {
-  ModalState,
   modalfy,
+  ModalState,
   ModalfyParams,
   ModalStackItem,
 } from 'react-native-modalfy';

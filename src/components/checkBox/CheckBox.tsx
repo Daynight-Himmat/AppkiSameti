@@ -38,12 +38,10 @@ const CheckBox = React.memo(
       size: size,
       isSelect: value,
       checkBoxSide: checkBoxSide,
+      checkColor: checkColor,
     });
 
-    const onContainerPress = useCallback(() => {
-        const v = value = !value;
-        onChange(v);
-    }, [onChange]);
+    const onContainerPress = useCallback(() => onChange(!value), [onChange, value]);
 
     const renderCheck = useCallback(
       () => (
@@ -53,12 +51,12 @@ const CheckBox = React.memo(
               icon={'checkIcon'}
               onPress={onContainerPress}
               size={size ? size / 1.5 : 10}
-              iconColor={checkColor ? checkColor : colors.white}
+              iconColor={colors.white}
             />
           )}
         </Pressable>
       ),
-      [onContainerPress, styles, checkStyle, value, size, checkColor, colors],
+      [onContainerPress, styles, checkStyle, value, size, colors],
     );
 
     const renderText = useCallback(

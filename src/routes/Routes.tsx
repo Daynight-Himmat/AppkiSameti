@@ -90,12 +90,6 @@ const getIcon = (routeName: keyof RootStackParamList) => {
   switch (routeName) {
     case 'home':
       return Svg.homeIcon;
-    case 'search':
-      return Svg.searchIcon;
-    case 'chatList':
-      return Svg.chatIcon;
-    case 'cart':
-      return Svg.cartIcon;
     case 'profile':
       return Svg.groupIcon;
   }

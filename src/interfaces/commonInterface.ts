@@ -6,6 +6,10 @@ export interface CommonInterface {
     title: string;
 }
 
+export interface CommonUser {
+    username: string;
+    enrollNo: number;
+}
 
 export type SametiType = 'sameti' | 'vc';
 

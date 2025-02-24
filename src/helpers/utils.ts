@@ -4,14 +4,11 @@ import modalfy from './modalfy';
 const globalAny: any = global;
 
 export const startLoader = () => {
-  if (modalfy.isModalOpened(MODALS.loader)) {
-    return;
-  }
-  modalfy.open(MODALS.loader);
+  globalAny.props.showAppLoader();
 };
 
 export const stopLoader = () => {
-  modalfy.close(MODALS.loader);
+  globalAny.props.hideAppLoader();
 };
 export const showToaster = (
   message: string,
