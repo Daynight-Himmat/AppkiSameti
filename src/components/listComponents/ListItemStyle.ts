@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useResponsiveScreen, useTheme} from '../../hooks';
 
 interface props {
   size?: number;
@@ -9,9 +9,9 @@ interface props {
   type?: 'check' | 'radio' | 'address' | 'none' | undefined;
 }
 
-export const useListItemStyle = ({ size, isSelect }: props) => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+export const useListItemStyle = ({size, isSelect}: props) => {
+  const {colors} = useTheme();
+  const {hp, wp} = useResponsiveScreen();
   const styles = useMemo(() => {
     return StyleSheet.create({
       list: {
@@ -113,5 +113,5 @@ export const useListItemStyle = ({ size, isSelect }: props) => {
     });
   }, [colors, hp, isSelect, size, wp]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

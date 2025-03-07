@@ -1,19 +1,19 @@
 import Svg from '../../assets/svg';
 import React, { useCallback } from 'react';
-import useSubmitSameti from './hooks/useSubmitSameti';
-import { CASE_DATA } from '../../constants/constants';
-import { useSubmitSametiStyle } from './SubmitSametiStyle';
-import { FlatList, SafeAreaView, View } from 'react-native';
-import ListView from '../../components/listComponents/List';
-import RenderAppButton from '../../components/button/RenderButton';
 import AppText from '../../components/text/AppText';
-import LabelText from '../../components/labelText/LabelText';
+import { CASE_DATA } from '../../constants/constants';
 import { rupeeSymbol } from '../../helpers/appHelper';
 import Divider from '../../components/divider/Divider';
+import useSametiDetails from './hooks/useSametiDetails';
+import { FlatList, SafeAreaView, View } from 'react-native';
+import ListView from '../../components/listComponents/List';
+import LabelText from '../../components/labelText/LabelText';
+import { useSametiDetailsStyle } from './SametiDetailsStyle';
+import RenderAppButton from '../../components/button/RenderButton';
 
-const SubmitSameti = () => {
-  const {styles, colors} = useSubmitSametiStyle();
-  const {onSubmitPress} = useSubmitSameti();
+const SametiDetails = () => {
+  const {styles, colors} = useSametiDetailsStyle();
+  const {onSubmitPress} = useSametiDetails();
 
   const renderLeft = useCallback(() => {
     return (
@@ -64,11 +64,8 @@ const SubmitSameti = () => {
             keyExtractor={(_, i)=> i.toString()}
           />
       </View>
-      <View style={styles.renderButton}>
-        <RenderAppButton onPress={onSubmitPress} title={'Submit'} />
-      </View>
     </SafeAreaView>
   );
 };
 
-export default SubmitSameti;
+export default SametiDetails;

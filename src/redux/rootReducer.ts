@@ -1,14 +1,12 @@
-import {AnyAction, combineReducers} from 'redux';
-import counterSlice from './counterRedux/counterSlice';
-import authApi from '../services/authService';
-import {removeData} from '../helpers/localstorage';
-import {removeAuthToken} from '../helpers/api';
-import {ASYNC_STORE_VAR} from '../constants/constants';
 import authSlice from './auth/authSlice';
+import authApi from '../services/authService';
+import {removeAuthToken} from '../helpers/api';
+import {AnyAction, combineReducers} from 'redux';
+import {removeData} from '../helpers/localstorage';
+import {ASYNC_STORE_VAR} from '../constants/constants';
 
 const appReducer = combineReducers({
   [authApi.reducerPath]: authApi.reducer,
-  counter: counterSlice.reducer,
   auth: authSlice.reducer,
 });
 

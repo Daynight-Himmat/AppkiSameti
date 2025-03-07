@@ -8,11 +8,11 @@ import useSametiList from './hooks/useSametiList';
 
 const SametiList = () => {
     const {styles, colors} = useSametiListStyle();
-    const {onSametiPress} = useSametiList();
+    const {onSametiPress, onSametiDetialPress} = useSametiList();
 
     const renderItem = () => {
         return (
-            <Pressable style={styles.listContainer}>
+            <Pressable style={styles.listContainer} onPress={onSametiDetialPress}>
                 <AppText fontFamily={'semiBold'} style={styles.title}>10 Jan 2024</AppText>
                 <Svg.forwordArrowIcon fill={colors.darkGray} />
             </Pressable>

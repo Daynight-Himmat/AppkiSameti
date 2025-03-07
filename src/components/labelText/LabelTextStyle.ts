@@ -1,17 +1,19 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useResponsiveScreen, useTheme} from '../../hooks';
 
 export const useLabelStyle = () => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+  const {hp} = useResponsiveScreen();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
       labelContainer: {
         width: '100%',
+        flexDirection: 'row',
         paddingVertical: hp(SPACING.s3),
+        justifyContent: 'space-between',
       },
       key: {
         color: colors.gray,

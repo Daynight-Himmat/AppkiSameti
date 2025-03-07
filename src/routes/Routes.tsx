@@ -26,6 +26,10 @@ import Profile from '../views/profile/Profile';
 import SvgButton from '../components/svgButton/SvgButton';
 import SametiList from '../views/sametiList/SametiList';
 import UserSametiData from '../views/userSametiData/UserSameti';
+import SubmitSameti from '../views/submitSameti/SubmitSameti';
+import ShareLoan from '../views/shareLoan/ShareLoan';
+import FinalSubmitSameti from '../views/finalSubmit/FinalSubmit';
+import SametiDetails from '../views/sametiDetailsList/SametiDetails';
 
 const Auth = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<RootStackParamList>();
@@ -81,6 +85,26 @@ const AuthStack = () => {
         name={'userSametiData'}
         component={UserSametiData}
         options={{headerShown: true, headerTitle: 'User Sameti Data'}}
+      />
+      <Auth.Screen
+        name={'submitSameti'}
+        component={SubmitSameti}
+        options={{headerShown: true, headerTitle: 'Submit Sameti Data'}}
+      />
+      <Auth.Screen
+        name={'shareLoan'}
+        component={ShareLoan}
+        options={{headerShown: true, headerTitle: 'Share Loan Amount'}}
+      />
+      <Auth.Screen
+        name={'finalSubmit'}
+        component={FinalSubmitSameti}
+        options={{headerShown: true, headerTitle: 'Final Submit Sameti'}}
+      />
+      <Auth.Screen
+        name={'sametiDetails'}
+        component={SametiDetails}
+        options={{headerShown: true, headerTitle: 'Sameti Details'}}
       />
     </Auth.Navigator>
   );

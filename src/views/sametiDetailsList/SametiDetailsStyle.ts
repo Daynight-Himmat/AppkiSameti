@@ -3,7 +3,7 @@ import {SPACING} from '../../styles';
 import {StyleSheet} from 'react-native';
 import {useResponsiveScreen, useTheme} from '../../hooks';
 
-export const useSubmitSametiStyle = () => {
+export const useSametiDetailsStyle = () => {
   const {colors} = useTheme();
   const {wp, hp} = useResponsiveScreen();
   const styles = useMemo(() => {

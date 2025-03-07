@@ -3,7 +3,7 @@ import {SPACING} from '../../styles';
 import {StyleSheet} from 'react-native';
 import {useResponsiveScreen, useTheme} from '../../hooks';
 
-export const useSubmitSametiStyle = () => {
+export const useShareLoanStyle = () => {
   const {colors} = useTheme();
   const {wp, hp} = useResponsiveScreen();
   const styles = useMemo(() => {
@@ -15,21 +15,6 @@ export const useSubmitSametiStyle = () => {
       mainContainer: {
         flex: 1,
         paddingHorizontal: wp(SPACING.s16),
-      },
-      renderContainer: {
-        borderRadius: 6,
-        marginBottom: hp(SPACING.s10),
-        paddingVertical: wp(SPACING.s6),
-        paddingHorizontal: wp(SPACING.s16),
-        backgroundColor: colors.veryLightGray,
-      },
-      person: {
-        width: 48,
-        height: 48,
-        borderRadius: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: colors.darkGrayishBlue,
       },
       userContainer: {
         padding: 6,
@@ -46,8 +31,20 @@ export const useSubmitSametiStyle = () => {
         textAlign: 'center',
         paddingVertical: hp(SPACING.s6),
       },
-      amountContainer: {
+      shareLoanContainer: {
         flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 6,
+        justifyContent: 'space-between',
+      },
+      shareLoan: {
+        height: 'auto',
+        maxHeight: '50%',
+        padding: 6,
+        borderRadius: 6,
+        marginVertical: hp(SPACING.s6),
+        backgroundColor: colors.veryLightGray,
+        paddingHorizontal: wp(SPACING.s16),
       },
     });
   }, [colors, wp, hp]);

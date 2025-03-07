@@ -3,7 +3,7 @@ export type RootStackParamList = {
   login: {
     comeFrom?: keyof RootStackParamList;
   };
-  createSameti: undefined,
+  createSameti: undefined;
   splash: undefined;
   signUp: {
     comeFrom?: keyof RootStackParamList;
@@ -19,9 +19,13 @@ export type RootStackParamList = {
   dashboard: {
     comeFrom?: keyof RootStackParamList;
   };
-  changePassword: { comeFrom: keyof RootStackParamList };
+  changePassword: {comeFrom: keyof RootStackParamList};
   sametiList: undefined;
   userSametiData: undefined;
+  submitSameti: undefined;
+  shareLoan: undefined;
+  finalSubmit: undefined;
+  sametiDetails: undefined;
 };
 
 export const MODALS = {
@@ -29,5 +33,4 @@ export const MODALS = {
   confirmation: 'Confirmation',
 };
 
-export const tagType = {
-};
+export const tagType = {};

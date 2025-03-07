@@ -1,7 +1,7 @@
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../../constants/routeConstant';
 
-const useSubmitSameti = () => {
+const useFinalSametiSubmit = () => {
   const navigation =
     useNavigation<NavigationProp<RootStackParamList, 'submitSameti'>>();
   const onSubmitPress = () => navigation.navigate('shareLoan');
@@ -11,4 +11,4 @@ const useSubmitSameti = () => {
   };
 };
 
-export default useSubmitSameti;
+export default useFinalSametiSubmit;
