@@ -26,7 +26,7 @@ const windowWidth = Dimensions.get('window').width;
 
 const RenderHTML = React.memo(
   ({ htmlContent, height, baseStyleColor, ...rest }: Props) => {
-    const { hp, wp } = useResponsiveScreen();
+    
     const { styles, colors } = useRenderHTMLStyle();
     const baseStyle = StyleSheet.create({
       base: {
@@ -63,7 +63,7 @@ const RenderHTML = React.memo(
           alignSelf: 'center',
           fontWeight: 'bold',
           fontFamily: FONTS.bold,
-          paddingVertical: hp(10),
+          paddingVertical: (10),
         },
         contentModel: HTMLContentModel.block,
       }),
@@ -71,7 +71,7 @@ const RenderHTML = React.memo(
         tagName: 'h4',
         mixedUAStyles: {
           width: '100%',
-          paddingVertical: hp(10),
+          paddingVertical: (10),
         },
         contentModel: HTMLContentModel.block,
       }),
@@ -109,7 +109,7 @@ const RenderHTML = React.memo(
         tagName: 'br',
         mixedUAStyles: {
           width: '100%',
-          paddingTop: hp(6),
+          paddingTop: (6),
         },
         contentModel: HTMLContentModel.block,
       }),
@@ -117,9 +117,9 @@ const RenderHTML = React.memo(
         tagName: 'li',
         mixedUAStyles: {
           color: colors?.gray,
-          paddingLeft: wp(10),
+          paddingLeft: (10),
           fontFamily: FONTS?.regular,
-          paddingHorizontal: wp(10),
+          paddingHorizontal: (10),
           fontWeight: '400',
           fontSize: 14,
         },

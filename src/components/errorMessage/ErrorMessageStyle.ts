@@ -1,22 +1,21 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 export const useErrorMessageStyle = () => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
-        error: {
-            textAlign: 'left',
-            paddingTop: hp(SPACING.s4),
-            alignSelf: 'flex-start',
-            color: colors.toastError,
-          },
+      error: {
+        textAlign: 'left',
+        paddingTop: SPACING.s4,
+        alignSelf: 'flex-start',
+        color: colors.toastError,
+      },
     });
-  }, [colors, hp]);
+  }, [colors]);
 
   return {
     styles,

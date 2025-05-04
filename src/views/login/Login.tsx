@@ -52,7 +52,6 @@ const Login = () => {
             message={LOG_IN.message}
             labelStyle={styles.label}
           />
-
           {renderInput('phoneIcon', 'mobile', PLACEHOLDER.phone, 'Mobile No.')}
           {renderInput('lockIcon', 'password', PLACEHOLDER.password, 'Password')}
 

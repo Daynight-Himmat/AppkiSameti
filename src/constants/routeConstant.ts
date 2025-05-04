@@ -33,4 +33,12 @@ export const MODALS = {
   confirmation: 'Confirmation',
 };
 
+type PickRootStackParamList<K extends keyof RootStackParamList> = {
+  [P in K]: RootStackParamList[P];
+};
+
+export type ProfileStackParamsList = PickRootStackParamList<
+  'changePassword' | 'login'
+>;
+
 export const tagType = {};

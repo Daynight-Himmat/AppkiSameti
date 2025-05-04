@@ -1,11 +1,10 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { FONTS, SPACING } from '../../styles';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {FONTS, SPACING} from '../../styles';
+import {useTheme} from '../../hooks';
 
 export const useOrderComponentStyle = () => {
-  const { colors } = useTheme();
-  const { wp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -21,10 +20,10 @@ export const useOrderComponentStyle = () => {
       detailContainer: {
         width: '100%',
         justifyContent: 'flex-start',
-        paddingHorizontal: wp(SPACING.s6),
+        paddingHorizontal: SPACING.s6,
       },
     });
-  }, [colors, wp]);
+  }, [colors]);
 
   return {
     styles,

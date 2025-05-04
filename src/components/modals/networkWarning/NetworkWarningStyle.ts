@@ -1,11 +1,10 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { FONTS, SCREEN_WIDTH } from '../../../styles';
-import { useResponsiveScreen, useTheme } from '../../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {FONTS, SCREEN_WIDTH} from '../../../styles';
+import {useTheme} from '../../../hooks';
 
 export const NetworkWarningStyle = () => {
-  const { wp } = useResponsiveScreen();
-  const { colors } = useTheme();
+  const {colors} = useTheme();
   const styles = useMemo(() => {
     return StyleSheet.create({
       modalView: {
@@ -47,7 +46,7 @@ export const NetworkWarningStyle = () => {
       },
       button: {
         height: 42,
-        width: wp(200),
+        width: 200,
         borderRadius: 42,
         alignItems: 'center',
         justifyContent: 'center',
@@ -59,7 +58,7 @@ export const NetworkWarningStyle = () => {
         fontFamily: FONTS.semiBold,
       },
     });
-  }, [wp, colors]);
+  }, [colors]);
 
   return styles;
 };

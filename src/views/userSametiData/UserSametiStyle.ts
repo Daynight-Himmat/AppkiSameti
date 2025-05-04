@@ -1,11 +1,11 @@
 import {useMemo} from 'react';
-import {useResponsiveScreen, useTheme} from '../../hooks';
+import {useTheme} from '../../hooks';
 import {StyleSheet} from 'react-native';
 import {FONTS, SPACING} from '../../styles';
 
 export const useUserSametiDataStyle = () => {
   const {colors} = useTheme();
-  const {hp, wp} = useResponsiveScreen();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -14,15 +14,15 @@ export const useUserSametiDataStyle = () => {
       },
       mainContainer: {
         flex: 1,
-        paddingHorizontal: wp(SPACING.s16),
+        paddingHorizontal: SPACING.s16,
       },
       dataContainer: {
         borderRadius: 6,
-        marginVertical: hp(SPACING.s6),
+        marginVertical: SPACING.s6,
         backgroundColor: colors.veryLightGray,
       },
       amountContainer: {
-        paddingHorizontal: wp(SPACING.s16),
+        paddingHorizontal: SPACING.s16,
       },
       title: {
         fontSize: 14,
@@ -30,7 +30,7 @@ export const useUserSametiDataStyle = () => {
       amountType: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingTop: hp(SPACING.s16),
+        paddingTop: SPACING.s16,
       },
       caseButton: {
         width: '45%',
@@ -38,13 +38,14 @@ export const useUserSametiDataStyle = () => {
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: wp(16),
+        paddingHorizontal: 16,
         borderColor: colors.darkGray,
         backgroundColor: colors.darkGray,
-        marginHorizontal: wp(SPACING.s3),
+        marginHorizontal: SPACING.s3,
       },
       buttonText: {
         color: colors.white,
+        lineHeight: 14,
       },
       buttonView: {
         width: '50%',
@@ -55,26 +56,26 @@ export const useUserSametiDataStyle = () => {
         padding: 4,
         borderWidth: 2,
         borderRadius: 6,
-        marginTop: hp(SPACING.s16),
-        paddingBottom: hp(SPACING.s16),
+        marginTop: SPACING.s16,
+        paddingBottom: SPACING.s16,
       },
       caseStructureTitle: {
         textAlign: 'center',
         fontSize: 18,
-        marginTop: hp(SPACING.s16),
-        marginBottom: hp(SPACING.s6),
+        marginTop: SPACING.s16,
+        marginBottom: SPACING.s6,
       },
       checkContainer: {
         width: '50%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginVertical: wp(SPACING.s1),
-        paddingVertical: hp(SPACING.s1),
+        marginVertical: SPACING.s1,
+        paddingVertical: SPACING.s1,
       },
       checkBox: {
         width: '25%',
         textAlign: 'center',
-        marginLeft: wp(SPACING.s16),
+        marginLeft: SPACING.s16,
       },
       checkBoxText: {
         width: '70%',
@@ -91,7 +92,7 @@ export const useUserSametiDataStyle = () => {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginVertical: hp(SPACING.s3),
+        marginVertical: SPACING.s3,
       },
       lableInput: {
         width: '100%',
@@ -102,13 +103,13 @@ export const useUserSametiDataStyle = () => {
         alignSelf: 'flex-end',
       },
       totalAmountContainer: {
-        marginTop: wp(SPACING.s16),
+        marginTop: SPACING.s16,
       },
       renderButton: {
-        marginHorizontal: wp(SPACING.s16),
+        marginHorizontal: SPACING.s16,
       },
     });
-  }, [colors, wp, hp]);
+  }, [colors]);
 
   return {
     styles,

@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 interface Props {
   height?: number;
@@ -14,16 +14,16 @@ export const useFooterButtonStyle = ({
   borderRadius,
   onPressCancel,
 }: Props) => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingVertical: hp(SPACING?.s10),
-        paddingHorizontal: wp(SPACING?.s16),
+        paddingVertical: SPACING?.s10,
+        paddingHorizontal: SPACING?.s16,
       },
       button: {
         height: height ? height : 48,
@@ -40,7 +40,7 @@ export const useFooterButtonStyle = ({
         width: onPressCancel ? '47%' : '100%',
       },
     });
-  }, [hp, wp, colors, height, borderRadius, onPressCancel]);
+  }, [colors, height, borderRadius, onPressCancel]);
 
   return styles;
 };

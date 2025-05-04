@@ -1,25 +1,25 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { FONTS, SPACING } from '../../styles';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {FONTS, SPACING} from '../../styles';
+import {useTheme} from '../../hooks';
 
 interface props {
   borderRadius?: number;
   backgroundColor?: string | undefined;
 }
 
-export const useAppButtonStyle = ({ backgroundColor, borderRadius }: props) => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+export const useAppButtonStyle = ({backgroundColor, borderRadius}: props) => {
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       button: {
-        width: wp(200),
+        width: 200,
         borderRadius: 6,
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        paddingHorizontal: wp(SPACING.s12),
+        paddingHorizontal: SPACING.s12,
         backgroundColor: backgroundColor || colors.primary,
       },
       label: {
@@ -35,31 +35,31 @@ export const useAppButtonStyle = ({ backgroundColor, borderRadius }: props) => {
         borderRadius: borderRadius || 6,
       },
       buttonContainer: {
-        paddingVertical: hp(SPACING.s16),
+        paddingVertical: SPACING.s16,
       },
       buttonText: {
         fontFamily: FONTS.medium,
       },
       iconSpace: {
-        paddingRight: hp(SPACING.s6),
+        paddingRight: SPACING.s6,
       },
       cartButton: {
         width: '100%',
         height: 35,
         maxHeight: 40,
         backgroundColor: colors?.green,
-        marginVertical: hp(SPACING.s6),
-        paddingVertical: hp(SPACING.s6),
+        marginVertical: SPACING.s6,
+        paddingVertical: SPACING.s6,
       },
       cartContainer: {
-        paddingHorizontal: wp(SPACING.s6),
+        paddingHorizontal: SPACING.s6,
       },
       cartButtonLabel: {
         fontSize: 14,
         fontFamily: FONTS.medium,
       },
     });
-  }, [wp, backgroundColor, colors, borderRadius, hp]);
+  }, [backgroundColor, colors, borderRadius]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

@@ -1,11 +1,10 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { SHADOW, SPACING } from '../../styles';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {SHADOW, SPACING} from '../../styles';
+import {useTheme} from '../../hooks';
 
 export const useCartHeaderStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -15,13 +14,13 @@ export const useCartHeaderStyle = () => {
         ...SHADOW.shadow3,
         justifyContent: 'center',
         backgroundColor: colors.white,
-        marginVertical: hp(SPACING.s6),
+        marginVertical: SPACING.s6,
       },
       cartContainer: {
         width: '100%',
         borderRadius: 6,
         justifyContent: 'center',
-        marginBottom: hp(SPACING.s6),
+        marginBottom: SPACING.s6,
         backgroundColor: colors.white,
       },
       branchLabelContainer: {
@@ -35,7 +34,7 @@ export const useCartHeaderStyle = () => {
         width: '30%',
         height: '100%',
         resizeMode: 'contain',
-        paddingLeft: wp(SPACING.s16),
+        paddingLeft: SPACING.s16,
         justifyContent: 'flex-start',
       },
       image: {
@@ -46,21 +45,21 @@ export const useCartHeaderStyle = () => {
       },
       titleContainer: {
         width: '70%',
-        paddingHorizontal: hp(SPACING.s16),
+        paddingHorizontal: SPACING.s16,
       },
       title: {
         fontSize: 16,
         color: colors.white,
       },
       noticeContainer: {
-        paddingHorizontal: wp(SPACING.s16),
+        paddingHorizontal: SPACING.s16,
       },
       noticeText: {
         color: colors.white,
-        paddingBottom: hp(SPACING.s16),
+        paddingBottom: SPACING.s16,
       },
     });
-  }, [colors, wp, hp]);
+  }, [colors]);
 
   return {
     styles,

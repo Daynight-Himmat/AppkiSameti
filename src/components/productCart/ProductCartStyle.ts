@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { SCREEN_WIDTH, SPACING } from '../../styles';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {SCREEN_WIDTH, SPACING} from '../../styles';
+import {useTheme} from '../../hooks';
 
 export const useProductCartStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       labelText: {
@@ -17,11 +17,11 @@ export const useProductCartStyle = () => {
       renderRadioItem: {
         width: '100%',
         justifyContent: 'center',
-        paddingVertical: hp(SPACING.s10),
-        paddingHorizontal: wp(SPACING.s16),
+        paddingVertical: SPACING.s10,
+        paddingHorizontal: SPACING.s16,
       },
     });
-  }, [colors, wp, hp]);
+  }, [colors]);
 
   return {
     styles,

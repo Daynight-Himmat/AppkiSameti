@@ -1,10 +1,9 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 const useRenderHTMLStyle = () => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -12,7 +11,7 @@ const useRenderHTMLStyle = () => {
         flex: 1,
       },
       imageContainer: {
-        marginVertical: hp(10),
+        marginVertical: 10,
       },
       image: {
         width: '60%',
@@ -31,9 +30,8 @@ const useRenderHTMLStyle = () => {
         fontSize: 14,
       },
     });
-  }, [colors, hp]);
+  }, [colors]);
   return {
-    hp,
     styles,
     colors,
   };

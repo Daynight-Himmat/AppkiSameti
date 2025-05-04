@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native';
-import { useMemo } from 'react';
-import { useResponsiveScreen, useTheme } from '../../../hooks';
-import { SCREEN_WIDTH } from '../../../styles';
+import {StyleSheet} from 'react-native';
+import {useMemo} from 'react';
+import {useTheme} from '../../../hooks';
+import {SCREEN_WIDTH} from '../../../styles';
 
 export const useImageViewStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       contentContainer: {
@@ -22,12 +22,12 @@ export const useImageViewStyle = () => {
       },
       icon: {
         zIndex: 1,
-        top: hp(22),
-        right: wp(22),
+        top: 22,
+        right: 22,
         position: 'absolute',
       },
     });
-  }, [colors, wp, hp]);
+  }, [colors]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

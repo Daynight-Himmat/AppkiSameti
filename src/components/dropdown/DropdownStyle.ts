@@ -1,15 +1,14 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { I18nManager, StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {I18nManager, StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 interface dropdownStyleProps {
   isOpen?: boolean;
 }
 
 export const useDropdownStyle = ({}: dropdownStyleProps) => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -17,7 +16,7 @@ export const useDropdownStyle = ({}: dropdownStyleProps) => {
         justifyContent: 'center',
       },
       mainContainer: {
-        marginBottom: hp(SPACING?.s4),
+        marginBottom: SPACING?.s4,
       },
       container: {
         flexShrink: 1,
@@ -50,7 +49,7 @@ export const useDropdownStyle = ({}: dropdownStyleProps) => {
       },
       title: {
         fontSize: 16,
-        marginVertical: hp(SPACING.s6),
+        marginVertical: SPACING.s6,
         writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
       },
       item: {
@@ -73,16 +72,16 @@ export const useDropdownStyle = ({}: dropdownStyleProps) => {
         height: 45,
         borderWidth: 0.5,
         borderColor: '#DDDDDD',
-        marginBottom: hp(SPACING.s8),
-        paddingHorizontal: wp(SPACING.s8),
+        marginBottom: SPACING.s8,
+        paddingHorizontal: SPACING.s8,
       },
       fullScreen: {
         alignItems: 'center',
         justifyContent: 'center',
       },
       labelContainer: {
-        marginBottom: hp(SPACING.s6),
-        paddingVertical: hp(SPACING.s6),
+        marginBottom: SPACING.s6,
+        paddingVertical: SPACING.s6,
       },
       labelTextStyle: {
         color: colors.black,
@@ -98,9 +97,9 @@ export const useDropdownStyle = ({}: dropdownStyleProps) => {
         height: 50,
         borderWidth: 1,
         borderRadius: 6,
-        marginBottom: hp(SPACING.s10),
+        marginBottom: SPACING.s10,
         borderColor: colors.grayishBlue,
-        paddingHorizontal: wp(SPACING.s10),
+        paddingHorizontal: SPACING.s10,
       },
       labelText: {
         color: colors.darkGrayishBlue,
@@ -118,7 +117,7 @@ export const useDropdownStyle = ({}: dropdownStyleProps) => {
         color: colors.gray,
       },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

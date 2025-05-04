@@ -1,8 +1,8 @@
-import { ReactNode, useMemo } from 'react';
-import { DEFAULT_COLORS } from '../../styles';
-import { useResponsiveScreen, useTheme } from '../../hooks';
-import { SCREEN_WIDTH, SHADOW, SPACING } from '../../styles';
-import { PressableStateCallbackType, StyleSheet } from 'react-native';
+import {ReactNode, useMemo} from 'react';
+import {DEFAULT_COLORS} from '../../styles';
+import {useTheme} from '../../hooks';
+import {SCREEN_WIDTH, SHADOW, SPACING} from '../../styles';
+import {PressableStateCallbackType, StyleSheet} from 'react-native';
 
 interface props {
   leftIcon?: ReactNode | ((state: PressableStateCallbackType) => ReactNode);
@@ -16,8 +16,8 @@ export const useAppTextInputStyle = ({
   type,
   editable = true,
 }: props) => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -29,7 +29,7 @@ export const useAppTextInputStyle = ({
         backgroundColor: DEFAULT_COLORS.white,
       },
       margin: {
-        marginBottom: hp(SPACING.s4),
+        marginBottom: SPACING.s4,
       },
       inputContainer: {
         flexDirection: 'row',
@@ -37,13 +37,13 @@ export const useAppTextInputStyle = ({
       },
       rightIcon: {
         position: 'absolute',
-        right: wp(SPACING.s20),
+        right: SPACING.s20,
       },
       label: {
         color: colors.primary,
-        marginBottom: hp(SPACING.s3),
+        marginBottom: SPACING.s3,
         alignSelf: 'flex-start',
-        marginTop: hp(SPACING.s10),
+        marginTop: SPACING.s10,
       },
       required: {
         color: colors.red,
@@ -57,11 +57,11 @@ export const useAppTextInputStyle = ({
         height: 48,
         width: '100%',
         color: colors.primary,
-        paddingLeft: leftIcon ? wp(SPACING.s45) : wp(16),
-        paddingRight: type === 'password' ? wp(50) : wp(16),
+        paddingLeft: leftIcon ? SPACING.s45 : 16,
+        paddingRight: type === 'password' ? 50 : 16,
       },
       prefixTextStyles: {
-        marginEnd: wp(4),
+        marginEnd: 4,
         color: colors.black,
         alignSelf: 'center',
         textAlignVertical: 'center',
@@ -82,17 +82,17 @@ export const useAppTextInputStyle = ({
       },
       leftIcon: {
         position: 'absolute',
-        left: wp(SPACING.s14),
+        left: SPACING.s14,
       },
       floatingLabel: {
         position: 'absolute',
-        top: hp(-10),
-        left: wp(SPACING.s12),
+        top: -10,
+        left: SPACING.s12,
         backgroundColor: colors.white,
-        paddingHorizontal: wp(SPACING.s6),
+        paddingHorizontal: SPACING.s6,
       },
       percentage: {
-        right: wp(SPACING.s12),
+        right: SPACING.s12,
         position: 'absolute',
       },
       labelText: {
@@ -103,7 +103,7 @@ export const useAppTextInputStyle = ({
         borderWidth: 1,
         borderRadius: 6,
         alignItems: 'center',
-        marginVertical: hp(SPACING.s2),
+        marginVertical: SPACING.s2,
         borderColor: colors.grayishBlue,
       },
       inputText: {
@@ -133,28 +133,28 @@ export const useAppTextInputStyle = ({
       },
       titleContainer: {
         color: colors.black,
-        paddingHorizontal: wp(SPACING.s10),
+        paddingHorizontal: SPACING.s10,
       },
       item: {
-        height: hp(25),
+        height: 25,
         borderWidth: 1,
         borderRadius: 50,
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
         borderColor: colors.black,
-        paddingRight: hp(SPACING.s2),
-        marginBottom: hp(SPACING.s10),
-        marginVertical: hp(SPACING.s6),
-        paddingVertical: hp(SPACING.s4),
-        marginHorizontal: hp(SPACING.s2),
+        paddingRight: SPACING.s2,
+        marginBottom: SPACING.s10,
+        marginVertical: SPACING.s6,
+        paddingVertical: SPACING.s4,
+        marginHorizontal: SPACING.s2,
       },
       authDropDownContainer: {
         width: '100%',
         borderRadius: 8,
         borderWidth: 2,
         borderColor: colors.white,
-        marginTop: hp(SPACING.s14),
+        marginTop: SPACING.s14,
         justifyContent: 'flex-start',
         backgroundColor: colors.white,
       },
@@ -162,8 +162,8 @@ export const useAppTextInputStyle = ({
         fontSize: 16,
         color: colors.gray,
         alignSelf: 'flex-start',
-        marginTop: hp(SPACING.s8),
-        paddingHorizontal: wp(SPACING.s10),
+        marginTop: SPACING.s8,
+        paddingHorizontal: SPACING.s10,
       },
       inputStyle: {
         flexDirection: 'row',
@@ -172,7 +172,7 @@ export const useAppTextInputStyle = ({
         height: 38,
         justifyContent: 'center',
         width: SCREEN_WIDTH / 1.3,
-        paddingHorizontal: wp(SPACING.s10),
+        paddingHorizontal: SPACING.s10,
       },
       noDataText: {
         fontSize: 14,
@@ -185,10 +185,10 @@ export const useAppTextInputStyle = ({
       },
       flatListContainer: {
         flexGrow: 1,
-        paddingRight: wp(SPACING.s16),
+        paddingRight: SPACING.s16,
       },
     });
-  }, [editable, hp, wp, colors, leftIcon, type]);
+  }, [editable, colors, leftIcon, type]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

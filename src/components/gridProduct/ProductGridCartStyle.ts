@@ -1,12 +1,11 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { SHADOW } from '../../styles/shadow';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {SHADOW} from '../../styles/shadow';
+import {useTheme} from '../../hooks';
 
 export const useProductGridCartStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -18,7 +17,7 @@ export const useProductGridCartStyle = () => {
       productCode: {
         fontSize: 12,
         color: colors.darkGrayishBlue,
-        paddingVertical: hp(SPACING.s6),
+        paddingVertical: SPACING.s6,
       },
       productListContainer: {
         flex: 1,
@@ -34,7 +33,7 @@ export const useProductGridCartStyle = () => {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         backgroundColor: colors.white,
-        marginVertical: hp(SPACING.s6),
+        marginVertical: SPACING.s6,
       },
       productGridSubContainer: {
         width: '95%',
@@ -42,7 +41,7 @@ export const useProductGridCartStyle = () => {
         ...SHADOW.shadow5,
         justifyContent: 'flex-start',
         backgroundColor: colors.white,
-        marginVertical: hp(SPACING.s6),
+        marginVertical: SPACING.s6,
       },
       imageListContainer: {
         width: '25%',
@@ -52,7 +51,7 @@ export const useProductGridCartStyle = () => {
         justifyContent: 'center',
       },
       imageGridContainer: {
-        height: hp(150),
+        height: 150,
         borderRadius: 6,
         margin: SPACING.s10,
         alignItems: 'center',
@@ -60,8 +59,8 @@ export const useProductGridCartStyle = () => {
       },
       products: {
         flex: 1,
-        paddingVertical: hp(SPACING.s10),
-        paddingHorizontal: wp(SPACING.s10),
+        paddingVertical: SPACING.s10,
+        paddingHorizontal: SPACING.s10,
       },
       discountPrice: {
         fontSize: 12,
@@ -69,7 +68,7 @@ export const useProductGridCartStyle = () => {
         textDecorationLine: 'line-through',
       },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

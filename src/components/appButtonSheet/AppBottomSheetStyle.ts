@@ -1,16 +1,16 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { DEFAULT_COLORS } from '../../styles';
-import { useResponsiveScreen, useTheme } from '../../hooks';
-import { SCREEN_WIDTH, SHADOW, SPACING } from '../../styles';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {DEFAULT_COLORS} from '../../styles';
+import {useTheme} from '../../hooks';
+import {SCREEN_WIDTH, SHADOW, SPACING} from '../../styles';
 
 interface props {
   editable?: boolean;
 }
 
-export const useAppButtonSheetStyle = ({ editable = true }: props) => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+export const useAppButtonSheetStyle = ({editable = true}: props) => {
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -22,23 +22,23 @@ export const useAppButtonSheetStyle = ({ editable = true }: props) => {
         backgroundColor: DEFAULT_COLORS.white,
       },
       margin: {
-        marginBottom: hp(SPACING.s10),
+        marginBottom: SPACING.s10,
       },
       rightIcon: {
         position: 'absolute',
-        right: wp(SPACING.s20),
+        right: SPACING.s20,
       },
       error: {
         textAlign: 'left',
-        paddingTop: hp(SPACING.s4),
+        paddingTop: SPACING.s4,
         alignSelf: 'flex-start',
         color: colors.toastError,
       },
       label: {
         color: colors.primary,
-        marginBottom: hp(SPACING.s12),
+        marginBottom: SPACING.s12,
         alignSelf: 'flex-start',
-        marginTop: hp(SPACING.s10),
+        marginTop: SPACING.s10,
       },
       required: {
         color: colors.toastError,
@@ -49,7 +49,7 @@ export const useAppButtonSheetStyle = ({ editable = true }: props) => {
       },
       prefixTextStyles: {
         color: colors.black,
-        marginEnd: wp(SPACING.s4),
+        marginEnd: SPACING.s4,
         textAlignVertical: 'center',
         alignSelf: 'center',
       },
@@ -58,11 +58,11 @@ export const useAppButtonSheetStyle = ({ editable = true }: props) => {
         justifyContent: 'flex-start',
       },
       floatingLabel: {
-        top: hp(-10),
+        top: -10,
         position: 'absolute',
-        left: wp(SPACING.s12),
+        left: SPACING.s12,
         backgroundColor: colors.white,
-        paddingHorizontal: wp(SPACING.s6),
+        paddingHorizontal: SPACING.s6,
       },
       labelText: {
         color: colors.darkGrayishBlue,
@@ -72,7 +72,7 @@ export const useAppButtonSheetStyle = ({ editable = true }: props) => {
         borderRadius: 6,
         borderWidth: 1,
         alignItems: 'center',
-        marginVertical: hp(SPACING.s2),
+        marginVertical: SPACING.s2,
         borderColor: colors.grayishBlue,
       },
       valueText: {
@@ -98,22 +98,22 @@ export const useAppButtonSheetStyle = ({ editable = true }: props) => {
         fontSize: 10,
       },
       titleContainer: {
-        paddingHorizontal: wp(SPACING.s10),
+        paddingHorizontal: SPACING.s10,
         color: colors.black,
       },
       item: {
         borderWidth: 1,
-        height: hp(25),
+        height: 25,
         borderRadius: 50,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         borderColor: colors.black,
-        paddingRight: hp(SPACING.s2),
-        marginBottom: hp(SPACING.s10),
-        marginVertical: hp(SPACING.s6),
-        paddingVertical: hp(SPACING.s4),
-        marginHorizontal: hp(SPACING.s2),
+        paddingRight: SPACING.s2,
+        marginBottom: SPACING.s10,
+        marginVertical: SPACING.s6,
+        paddingVertical: SPACING.s4,
+        marginHorizontal: SPACING.s2,
       },
       inputStyle: {
         flexDirection: 'row',
@@ -135,10 +135,10 @@ export const useAppButtonSheetStyle = ({ editable = true }: props) => {
       },
       flatListContainer: {
         flexGrow: 1,
-        paddingRight: wp(SPACING.s16),
+        paddingRight: SPACING.s16,
       },
     });
-  }, [editable, hp, wp, colors]);
+  }, [editable, colors]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

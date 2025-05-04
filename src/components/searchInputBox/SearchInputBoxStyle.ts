@@ -1,16 +1,16 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 export const useSearchBoxStyle = () => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       searchContainer: {
-        paddingTop: hp(SPACING.s10),
-        paddingHorizontal: hp(SPACING.s16),
+        paddingTop: SPACING.s10,
+        paddingHorizontal: SPACING.s16,
       },
       searchInput: {
         borderRadius: 4,
@@ -20,7 +20,7 @@ export const useSearchBoxStyle = () => {
         color: colors.gray,
       },
     });
-  }, [colors, hp]);
+  }, [colors]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

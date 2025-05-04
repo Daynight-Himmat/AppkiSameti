@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
-import { SPACING } from '../../styles';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
+import {SPACING} from '../../styles';
 
 export const useLoginStyle = () => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -17,12 +17,12 @@ export const useLoginStyle = () => {
       },
       subContainer: {
         flex: 1,
-        paddingHorizontal: wp(SPACING.s16),
+        paddingHorizontal: SPACING.s16,
       },
       button: {
         height: 48,
         width: '100%',
-        marginTop: hp(SPACING.s22),
+        marginTop: SPACING.s22,
         backgroundColor: colors.darkGray,
       },
       label: {
@@ -36,10 +36,10 @@ export const useLoginStyle = () => {
         color: colors.darkGray,
       },
       buttonContainer: {
-        paddingHorizontal: wp(16)
-      }
+        paddingHorizontal: 16,
+      },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

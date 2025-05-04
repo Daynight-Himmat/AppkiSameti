@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 export const useTextInputControllerStyle = () => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       labelText: {
@@ -16,14 +16,14 @@ export const useTextInputControllerStyle = () => {
         borderWidth: 1,
         borderRadius: 6,
         alignItems: 'center',
-        marginVertical: hp(SPACING.s2),
+        marginVertical: SPACING.s2,
         borderColor: colors.grayishBlue,
       },
       inputText: {
         color: colors.black,
       },
     });
-  }, [hp, colors]);
+  }, [colors]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

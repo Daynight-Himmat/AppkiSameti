@@ -1,22 +1,22 @@
-import { StyleSheet } from 'react-native';
-import { useMemo } from 'react';
-import { SCREEN_WIDTH, SPACING } from '../../../styles';
-import { useResponsiveScreen, useTheme } from '../../../hooks';
-import { useKeyboard } from '../../../hooks/useKeyboard';
+import {StyleSheet} from 'react-native';
+import {useMemo} from 'react';
+import {SCREEN_WIDTH, SPACING} from '../../../styles';
+import {useTheme} from '../../../hooks';
+import {useKeyboard} from '../../../hooks/useKeyboard';
 
 export const useConfirmationStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
-  const { keyboardHeight } = useKeyboard();
+  const {colors} = useTheme();
+
+  const {keyboardHeight} = useKeyboard();
   const styles = useMemo(() => {
     return StyleSheet.create({
       modalView: {
         alignItems: 'center',
         borderRadius: 26,
-        paddingHorizontal: wp(22),
-        width: SCREEN_WIDTH - wp(44),
+        paddingHorizontal: 22,
+        width: SCREEN_WIDTH - 44,
         backgroundColor: colors.white,
-        paddingVertical: hp(SPACING.s16),
+        paddingVertical: SPACING.s16,
         marginBottom: keyboardHeight / 2,
       },
       content: {
@@ -24,7 +24,7 @@ export const useConfirmationStyle = () => {
         alignItems: 'center',
       },
       bodyText: {
-        fontSize: hp(24),
+        fontSize: 24,
         color: colors?.red,
         textAlign: 'center',
       },
@@ -32,11 +32,11 @@ export const useConfirmationStyle = () => {
         lineHeight: 18,
         textAlign: 'center',
         color: colors?.gray,
-        marginTop: hp(SPACING.s16),
-        fontSize: hp(SPACING.s16),
+        marginTop: SPACING.s16,
+        fontSize: SPACING.s16,
       },
     });
-  }, [colors, wp, hp, keyboardHeight]);
+  }, [colors, keyboardHeight]);
 
-  return { styles };
+  return {styles};
 };

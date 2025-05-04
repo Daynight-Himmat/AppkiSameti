@@ -1,11 +1,10 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../../styles';
-import { I18nManager, StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../../styles';
+import {I18nManager, StyleSheet} from 'react-native';
+import {useTheme} from '../../../hooks';
 
 export const useTextStyle = () => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -27,7 +26,7 @@ export const useTextStyle = () => {
       },
       label: {
         fontSize: 16,
-        marginBottom: hp(SPACING.s4),
+        marginBottom: SPACING.s4,
       },
       row: {
         flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
@@ -37,7 +36,7 @@ export const useTextStyle = () => {
         height: 20,
       },
     });
-  }, [colors, hp]);
+  }, [colors]);
 
   return {
     styles,

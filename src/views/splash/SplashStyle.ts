@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native';
-import { useMemo } from 'react';
-import { useResponsiveScreen, useTheme } from '../../hooks';
-import { SPACING } from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useMemo} from 'react';
+import {useTheme} from '../../hooks';
+import {SPACING} from '../../styles';
 
 export const useSplashStyle = () => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -16,8 +16,8 @@ export const useSplashStyle = () => {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: hp(SPACING.s10),
-        paddingHorizontal: wp(SPACING.s16),
+        marginTop: SPACING.s10,
+        paddingHorizontal: SPACING.s16,
       },
       iconContainer: {
         alignItems: 'center',
@@ -26,10 +26,10 @@ export const useSplashStyle = () => {
       appName: {
         fontSize: 28,
         color: colors.black,
-        paddingVertical: hp(SPACING.s10),
+        paddingVertical: SPACING.s10,
       },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { FONTS, SHADOW, SPACING } from '../../styles';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {FONTS, SHADOW, SPACING} from '../../styles';
+import {useTheme} from '../../hooks';
 
 export const useCounterStyle = () => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       counterContainer: {
@@ -21,8 +21,8 @@ export const useCounterStyle = () => {
         color: colors.gray,
         textAlign: 'center',
         fontFamily: FONTS.semiBold,
-        paddingLeft: hp(SPACING.none),
-        paddingRight: hp(SPACING.none),
+        paddingLeft: SPACING.none,
+        paddingRight: SPACING.none,
       },
       counterStyle: {
         width: 40,
@@ -38,7 +38,7 @@ export const useCounterStyle = () => {
         backgroundColor: colors.green,
       },
     });
-  }, [colors, hp]);
+  }, [colors]);
 
   return {
     styles,

@@ -1,24 +1,24 @@
-import { useMemo } from 'react';
-import { Platform, StyleSheet } from 'react-native';
-import { SCREEN_WIDTH, SPACING } from '../../../styles';
-import { useKeyboard } from '../../../hooks/useKeyboard';
-import { useResponsiveScreen, useTheme } from '../../../hooks';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import {useMemo} from 'react';
+import {Platform, StyleSheet} from 'react-native';
+import {SCREEN_WIDTH, SPACING} from '../../../styles';
+import {useKeyboard} from '../../../hooks/useKeyboard';
+import {useTheme} from '../../../hooks';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const useSearchFilterStyle = () => {
-  const { colors } = useTheme();
+  const {colors} = useTheme();
   const inset = useSafeAreaInsets();
-  const { keyboardHeight } = useKeyboard();
-  const { hp, wp } = useResponsiveScreen();
+  const {keyboardHeight} = useKeyboard();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
         width: SCREEN_WIDTH,
         borderTopLeftRadius: 26,
         borderTopRightRadius: 26,
-        paddingHorizontal: wp(28),
+        paddingHorizontal: 28,
         backgroundColor: colors.white,
-        paddingVertical: hp(SPACING.s16),
+        paddingVertical: SPACING.s16,
         marginBottom: Platform.OS === 'ios' ? keyboardHeight : 0,
       },
       heading: {
@@ -30,15 +30,15 @@ const useSearchFilterStyle = () => {
       topContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingBottom: hp(SPACING.s10),
+        paddingBottom: SPACING.s10,
         justifyContent: 'space-between',
       },
       footer: {
-        paddingBottom: hp(inset.bottom),
-        paddingVertical: hp(SPACING.s10),
+        paddingBottom: inset.bottom,
+        paddingVertical: SPACING.s10,
       },
     });
-  }, [wp, colors, hp, keyboardHeight, inset]);
+  }, [colors, keyboardHeight, inset]);
   return {
     styles,
     colors,

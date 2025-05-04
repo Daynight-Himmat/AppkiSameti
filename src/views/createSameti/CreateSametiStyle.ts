@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native';
-import { useMemo } from 'react';
-import { useResponsiveScreen, useTheme } from '../../hooks';
-import { SPACING } from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useMemo} from 'react';
+import {useTheme} from '../../hooks';
+import {SPACING} from '../../styles';
 
 export const useCreateSametiStyle = () => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -16,17 +16,17 @@ export const useCreateSametiStyle = () => {
         flex: 1,
       },
       subContainer: {
-        paddingHorizontal: wp(SPACING.s16),
+        paddingHorizontal: SPACING.s16,
       },
       button: {
         height: 48,
         width: '100%',
         borderRadius: 6,
-        marginTop: hp(SPACING.s22),
+        marginTop: SPACING.s22,
         backgroundColor: colors.green,
       },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

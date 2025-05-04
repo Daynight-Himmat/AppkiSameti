@@ -9,11 +9,10 @@ import { FlatList, SafeAreaView, View } from 'react-native';
 import ListView from '../../components/listComponents/List';
 import LabelText from '../../components/labelText/LabelText';
 import { useSametiDetailsStyle } from './SametiDetailsStyle';
-import RenderAppButton from '../../components/button/RenderButton';
 
 const SametiDetails = () => {
   const {styles, colors} = useSametiDetailsStyle();
-  const {onSubmitPress} = useSametiDetails();
+  const {} = useSametiDetails();
 
   const renderLeft = useCallback(() => {
     return (
@@ -63,7 +62,7 @@ const SametiDetails = () => {
             renderItem={renderItem}
             keyExtractor={(_, i)=> i.toString()}
           />
-      </View>
+      </View>n
     </SafeAreaView>
   );
 };

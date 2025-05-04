@@ -1,19 +1,18 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 export const useNoteContainerStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
       renderHeader: {
         borderRadius: 6,
-        marginVertical: hp(SPACING.s8),
-        paddingVertical: hp(SPACING.s8),
-        paddingHorizontal: wp(SPACING.s16),
+        marginVertical: SPACING.s8,
+        paddingVertical: SPACING.s8,
+        paddingHorizontal: SPACING.s16,
         backgroundColor: colors.lightGrayishLimeGreen,
       },
       headerText: {
@@ -21,7 +20,7 @@ export const useNoteContainerStyle = () => {
         color: colors.veryDarkLimeGreen,
       },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

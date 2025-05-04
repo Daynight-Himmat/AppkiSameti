@@ -1,21 +1,21 @@
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { FONTS, SHADOW, SPACING } from '../../styles';
-import { useTheme, useResponsiveScreen } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
+import {FONTS, SHADOW, SPACING} from '../../styles';
+import {useTheme, useResponsiveScreen} from '../../hooks';
 
 interface Props {
   paddingHorizontal?: number;
 }
 
-export const useHeadingTextStyle = ({ paddingHorizontal }: Props) => {
-  const { colors } = useTheme();
-  const { hp, wp } = useResponsiveScreen();
+export const useHeadingTextStyle = ({paddingHorizontal}: Props) => {
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
-        paddingTop: hp(SPACING.s6),
-        paddingBottom: hp(SPACING.s4),
-        paddingHorizontal: wp(paddingHorizontal || SPACING.none),
+        paddingTop: SPACING.s6,
+        paddingBottom: SPACING.s4,
+        paddingHorizontal: paddingHorizontal || SPACING.none,
       },
       label: {
         fontSize: 16,
@@ -24,7 +24,7 @@ export const useHeadingTextStyle = ({ paddingHorizontal }: Props) => {
         fontFamily: FONTS.semiBold,
       },
     });
-  }, [colors, hp, paddingHorizontal, wp]);
+  }, [colors, paddingHorizontal]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

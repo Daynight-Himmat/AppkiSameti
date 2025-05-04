@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
-import { StyleSheet, TextStyle } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {StyleSheet, TextStyle} from 'react-native';
+import {useTheme} from '../../hooks';
 
 interface props {
   size?: number;
@@ -8,9 +8,9 @@ interface props {
   style?: TextStyle;
 }
 
-export const useAppTextStyle = ({ style, size }: props) => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+export const useAppTextStyle = ({style, size}: props) => {
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -35,10 +35,10 @@ export const useAppTextStyle = ({ style, size }: props) => {
         color: colors.error,
         textAlign: 'left',
         alignSelf: 'flex-start',
-        marginTop: hp(4),
+        marginTop: 4,
       },
     });
-  }, [size, colors, style, hp]);
+  }, [size, colors, style]);
 
   return styles;
 };

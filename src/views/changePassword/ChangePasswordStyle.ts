@@ -1,11 +1,11 @@
 import {StyleSheet} from 'react-native';
 import {useMemo} from 'react';
-import { useResponsiveScreen, useTheme} from '../../hooks';
-import { SPACING } from '../../styles';
+import {useTheme} from '../../hooks';
+import {SPACING} from '../../styles';
 
 export const useChangePasswordStyle = () => {
   const {colors} = useTheme();
-  const {hp, wp} = useResponsiveScreen();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
@@ -14,7 +14,7 @@ export const useChangePasswordStyle = () => {
       },
       subContainer: {
         flex: 1,
-        paddingHorizontal: wp(16),
+        paddingHorizontal: 16,
       },
       welcomeContainer: {
         marginTop: 0,
@@ -38,17 +38,17 @@ export const useChangePasswordStyle = () => {
         fontWeight: 'bold',
       },
       buttonContainer: {
-        paddingHorizontal: wp(16),
-        marginVertical:hp(16),
+        paddingHorizontal: 16,
+        marginVertical: 16,
       },
       buttonStyle: {
         height: 48,
         width: '100%',
-        marginTop: hp(SPACING.s22),
+        marginTop: SPACING.s22,
         backgroundColor: colors.darkGray,
       },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

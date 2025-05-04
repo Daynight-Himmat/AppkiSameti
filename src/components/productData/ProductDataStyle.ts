@@ -1,11 +1,10 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 export const useProductDetailStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -17,20 +16,20 @@ export const useProductDetailStyle = () => {
       productCode: {
         fontSize: 12,
         color: colors.darkGrayishBlue,
-        paddingVertical: hp(SPACING.s6),
+        paddingVertical: SPACING.s6,
       },
       products: {
         flex: 1,
-        paddingVertical: hp(SPACING.s10),
-        paddingHorizontal: wp(SPACING.s10),
+        paddingVertical: SPACING.s10,
+        paddingHorizontal: SPACING.s10,
       },
       rate: {
         flexDirection: 'row',
-        paddingVertical: hp(SPACING.s4),
+        paddingVertical: SPACING.s4,
       },
       rateText: {
         color: colors.darkGray,
-        paddingHorizontal: wp(SPACING.s6),
+        paddingHorizontal: SPACING.s6,
       },
       availableStock: {
         textAlign: 'center',
@@ -38,11 +37,11 @@ export const useProductDetailStyle = () => {
       },
       stockContainer: {
         width: '100%',
-        paddingVertical: hp(SPACING.s6),
-        marginVertical: hp(SPACING.s6),
+        paddingVertical: SPACING.s6,
+        marginVertical: SPACING.s6,
       },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

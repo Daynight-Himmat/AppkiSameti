@@ -115,7 +115,7 @@ const getIcon = (routeName: keyof RootStackParamList) => {
     case 'home':
       return Svg.homeIcon;
     case 'profile':
-      return Svg.groupIcon;
+      return Svg.personIcon;
   }
 };
 

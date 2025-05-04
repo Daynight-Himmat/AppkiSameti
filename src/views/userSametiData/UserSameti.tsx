@@ -1,15 +1,15 @@
 import React from 'react';
 import AppText from '../../components/text/AppText';
-import {CASE_DATA, CASE_TYPE} from '../../constants/constants';
 import {FlatList, Pressable, View} from 'react-native';
+import {useUserSametiDataStyle} from './UserSametiStyle';
 import useSametiUserData from './hooks/useSametiUserData';
 import CheckBox from '../../components/checkBox/CheckBox';
-import {useUserSametiDataStyle} from './UserSametiStyle';
+import {PLACEHOLDER} from '../../constants/stringConstants';
+import {CASE_DATA, CASE_TYPE} from '../../constants/constants';
 import RenderAppButton from '../../components/button/RenderButton';
 import PersonList from '../../components/listComponents/person/PersonList';
 import CheckBoxController from '../../controller/CheckBoxController/CheckBoxController';
 import AppTextControlInput from '../../controller/TextInputController/TextInputController';
-import {PLACEHOLDER} from '../../constants/stringConstants';
 
 const UserSametiData = () => {
   const {styles, colors} = useUserSametiDataStyle();
@@ -27,14 +27,14 @@ const UserSametiData = () => {
     return (
       <View style={styles.checkContainer}>
         <CheckBox
-          onChange={() => {}}
+          size={18}
           value={false}
           labelField={item}
+          onChange={() => {}}
           checkBoxSide={'Left'}
           style={styles.checkBox}
-          size={18}
-          itemTextStyle={styles.checkTextStyle}
           checkColor={colors.darkGray}
+          itemTextStyle={styles.checkTextStyle}
         />
         <AppTextControlInput
           maxLength={7}

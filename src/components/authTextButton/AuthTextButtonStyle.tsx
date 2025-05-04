@@ -1,17 +1,17 @@
 import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {  useTheme } from '../../hooks';
 import { SPACING } from '../../styles';
 
 export const useAuthTextButtonStyle = () => {
   const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+  
   const styles = useMemo(() => {
     return StyleSheet.create({
       signUpContainer: {
-        marginTop: hp(SPACING.s16),
+        marginTop: (SPACING.s16),
         alignItems: 'center',
-        marginBottom: hp(SPACING.s20),
+        marginBottom: (SPACING.s20),
       },
       signUp: {
         textAlign: 'center',
@@ -21,7 +21,7 @@ export const useAuthTextButtonStyle = () => {
         color: colors.darkGray,
       },
     });
-  }, [colors, hp]);
+  }, [colors, ]);
 
   return { styles, colors };
 };

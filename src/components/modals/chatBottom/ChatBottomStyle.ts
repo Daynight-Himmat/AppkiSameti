@@ -1,15 +1,14 @@
-import { useMemo } from 'react';
-import { StyleSheet, Platform } from 'react-native';
-import { useKeyboard } from '../../../hooks/useKeyboard';
-import { useResponsiveScreen, useTheme } from '../../../hooks';
-import { FONTS, SCREEN_WIDTH, SPACING } from '../../../styles';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import {useMemo} from 'react';
+import {StyleSheet, Platform} from 'react-native';
+import {useKeyboard} from '../../../hooks/useKeyboard';
+import {useTheme} from '../../../hooks';
+import {FONTS, SCREEN_WIDTH, SPACING} from '../../../styles';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 export const useChatBottomStyle = () => {
-  const { colors } = useTheme();
+  const {colors} = useTheme();
   const inset = useSafeAreaInsets();
-  const { keyboardHeight } = useKeyboard();
-  const { wp, hp } = useResponsiveScreen();
+  const {keyboardHeight} = useKeyboard();
 
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -18,26 +17,26 @@ export const useChatBottomStyle = () => {
         alignItems: 'center',
         borderTopLeftRadius: 26,
         borderTopRightRadius: 26,
-        paddingHorizontal: wp(28),
+        paddingHorizontal: 28,
         backgroundColor: colors.white,
-        paddingVertical: hp(SPACING.s16),
+        paddingVertical: SPACING.s16,
         marginBottom: Platform.OS === 'ios' ? keyboardHeight : 0,
       },
       subContainer: {
         justifyContent: 'center',
       },
       inputContainer: {
-        marginVertical: hp(SPACING.s20),
+        marginVertical: SPACING.s20,
       },
       input: {
-        height: hp(50),
+        height: 50,
         borderWidth: 1,
         borderRadius: 6,
-        paddingHorizontal: wp(SPACING.s16),
+        paddingHorizontal: SPACING.s16,
         borderColor: colors.grayishBlue,
       },
       flatList: {
-        paddingBottom: wp(SPACING.s40),
+        paddingBottom: SPACING.s40,
       },
       containerDrop: {
         height: 150,
@@ -46,15 +45,15 @@ export const useChatBottomStyle = () => {
         justifyContent: 'flex-start',
       },
       labelContainer: {
-        marginBottom: hp(SPACING.s16),
+        marginBottom: SPACING.s16,
       },
       label: {
         fontSize: 20,
         color: colors.black,
       },
       footer: {
-        paddingVertical: hp(SPACING.s10),
-        paddingBottom: hp(inset.bottom),
+        paddingVertical: SPACING.s10,
+        paddingBottom: inset.bottom,
       },
       labelTextStyle: {
         color: colors.darkGray,
@@ -67,7 +66,7 @@ export const useChatBottomStyle = () => {
         color: colors.gray,
       },
     });
-  }, [colors, hp, inset, keyboardHeight, wp]);
+  }, [colors, inset, keyboardHeight]);
 
-  return { styles, colors };
+  return {styles, colors};
 };

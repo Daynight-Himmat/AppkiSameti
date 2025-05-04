@@ -1,19 +1,19 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
 
 export const useHomeStyle = () => {
-  const { colors } = useTheme();
-  const { wp, hp } = useResponsiveScreen();
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       container: {
         flex: 1,
         backgroundColor: colors?.backgroundColor,
       },
-      mainContainer:{
-        paddingHorizontal: wp(SPACING.s16),
+      mainContainer: {
+        paddingHorizontal: SPACING.s16,
       },
       header: {
         flexDirection: 'row',
@@ -26,7 +26,7 @@ export const useHomeStyle = () => {
         color: colors.darkGray,
         fontSize: 22,
       },
-      sametiContainer : {
+      sametiContainer: {
         padding: 16,
         borderRadius: 10,
         marginTop: 10,
@@ -46,18 +46,21 @@ export const useHomeStyle = () => {
       },
       groupCounter: {
         color: colors.darkGray,
-        paddingLeft: wp(6),
+        paddingLeft: 6,
       },
       timeContainer: {
         flexDirection: 'row',
-        paddingVertical: hp(SPACING.s6),
+        paddingVertical: SPACING.s6,
       },
       amountText: {
-        paddingTop: hp(3),
+        paddingTop: 3,
         color: colors.darkGray,
       },
+      heading: {
+        fontSize: 18,
+      },
     });
-  }, [colors, hp, wp]);
+  }, [colors]);
 
   return {
     styles,

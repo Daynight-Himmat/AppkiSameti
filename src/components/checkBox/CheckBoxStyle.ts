@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
-import { SPACING } from '../../styles';
-import { ColorValue, StyleSheet } from 'react-native';
-import { useResponsiveScreen, useTheme } from '../../hooks';
-import { CheckBoxSide } from '../../interfaces/commonInterface';
+import {useMemo} from 'react';
+import {SPACING} from '../../styles';
+import {ColorValue, StyleSheet} from 'react-native';
+import {useTheme} from '../../hooks';
+import {CheckBoxSide} from '../../interfaces/commonInterface';
 
 interface props {
   size?: number;
@@ -12,17 +12,22 @@ interface props {
   type?: 'check' | 'radio' | 'address' | 'none' | undefined;
 }
 
-export const useCheckBoxStyle = ({ size, isSelect, checkBoxSide, checkColor }: props) => {
-  const { colors } = useTheme();
-  const { hp } = useResponsiveScreen();
+export const useCheckBoxStyle = ({
+  size,
+  isSelect,
+  checkBoxSide,
+  checkColor,
+}: props) => {
+  const {colors} = useTheme();
+
   const styles = useMemo(() => {
     return StyleSheet.create({
       list: {
         width: '100%',
         borderRadius: 5,
         flexDirection: 'row',
-        marginTop: hp(SPACING.s8),
-        paddingBottom: hp(SPACING.s6),
+        marginTop: SPACING.s8,
+        paddingBottom: SPACING.s6,
         borderBottomColor: colors.grayishBlue,
       },
       itemContainer: {
@@ -33,8 +38,8 @@ export const useCheckBoxStyle = ({ size, isSelect, checkBoxSide, checkColor }: p
       },
       itemText: {
         color: colors.gray,
-        paddingLeft: ( checkBoxSide === 'Left' ? SPACING.s10 : SPACING.none),
-        paddingRight: ( checkBoxSide === 'Right' ? SPACING.s10 : SPACING.none),
+        paddingLeft: checkBoxSide === 'Left' ? SPACING.s10 : SPACING.none,
+        paddingRight: checkBoxSide === 'Right' ? SPACING.s10 : SPACING.none,
       },
       titleContainer: {
         width: '100%',
@@ -46,11 +51,15 @@ export const useCheckBoxStyle = ({ size, isSelect, checkBoxSide, checkColor }: p
         height: size || 16,
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: checkColor ?  checkColor : colors.green,
-        backgroundColor: isSelect ? checkColor ?  checkColor : colors.green : colors.white,
+        borderColor: checkColor ? checkColor : colors.green,
+        backgroundColor: isSelect
+          ? checkColor
+            ? checkColor
+            : colors.green
+          : colors.white,
       },
     });
-  }, [checkBoxSide, checkColor, colors, hp, isSelect, size]);
+  }, [checkBoxSide, checkColor, colors, isSelect, size]);
 
-  return { styles, colors };
+  return {styles, colors};
 };
